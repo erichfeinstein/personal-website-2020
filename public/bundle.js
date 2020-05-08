@@ -139,7 +139,7 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'main' },
+        null,
         _react2.default.createElement(_Sidebar2.default, null),
         _react2.default.createElement(_Content2.default, null)
       );
@@ -224,7 +224,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Divider = function Divider() {
   return _react2.default.createElement('div', {
     style: {
-      marginTop: 10,
+      marginTop: 25,
       marginBottom: 50,
       width: '100%',
       height: 2,
@@ -298,12 +298,6 @@ var ProjectSummary = function ProjectSummary() {
         style: {
           overlay: {
             backgroundColor: '#33333388'
-          },
-          content: {
-            padding: 0,
-            margin: 'auto',
-            width: '50%',
-            height: '70%'
           }
         },
         isOpen: isModalOpen,

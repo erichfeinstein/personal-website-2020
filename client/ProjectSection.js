@@ -17,12 +17,6 @@ const ProjectSummary = () => {
           overlay: {
             backgroundColor: '#33333388',
           },
-          content: {
-            padding: 0,
-            margin: 'auto',
-            width: '50%',
-            height: '70%',
-          },
         }}
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}

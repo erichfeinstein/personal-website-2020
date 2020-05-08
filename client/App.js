@@ -7,7 +7,7 @@ import Content from './Content';
 export default class App extends React.Component {
   render() {
     return (
-      <div id="main">
+      <div>
         <Sidebar />
         <Content />
       </div>
