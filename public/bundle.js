@@ -183,8 +183,13 @@ var _Divider = __webpack_require__(/*! ./Divider */ "./client/Divider.js");
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
+var _EmploymentSection = __webpack_require__(/*! ./EmploymentSection */ "./client/EmploymentSection.js");
+
+var _EmploymentSection2 = _interopRequireDefault(_EmploymentSection);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//Components
 var Content = function Content() {
   return _react2.default.createElement(
     'div',
@@ -192,11 +197,12 @@ var Content = function Content() {
     _react2.default.createElement(_Summary2.default, null),
     _react2.default.createElement(_Divider2.default, null),
     _react2.default.createElement(_ProjectSection2.default, null),
+    _react2.default.createElement(_Divider2.default, null),
+    _react2.default.createElement(_EmploymentSection2.default, null),
     _react2.default.createElement(_Divider2.default, null)
   );
 };
 
-//Components
 exports.default = Content;
 
 /***/ }),
@@ -238,6 +244,94 @@ exports.default = Divider;
 
 /***/ }),
 
+/***/ "./client/EmploymentSection.js":
+/*!*************************************!*\
+  !*** ./client/EmploymentSection.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _colors = __webpack_require__(/*! ./colors */ "./client/colors.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _require = __webpack_require__(/*! ./employment */ "./client/employment.js"),
+    employmentList = _require.employmentList;
+
+var EmploymentSection = function EmploymentSection() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      { style: styles.sectionHeader },
+      'Employment'
+    ),
+    employmentList.map(function (employment) {
+      return _react2.default.createElement(Employment, { employment: employment });
+    })
+  );
+};
+
+var Employment = function Employment(_ref) {
+  var employment = _ref.employment;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      { style: styles.employmentContent },
+      _react2.default.createElement(
+        'strong',
+        null,
+        employment.company
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { style: styles.employmentContent },
+      employment.description.map(function (p, i) {
+        return _react2.default.createElement(
+          'p',
+          { key: i },
+          p
+        );
+      })
+    )
+  );
+};
+
+exports.default = EmploymentSection;
+
+
+var styles = {
+  sectionHeader: {
+    fontSize: 24,
+    marginBottom: 50,
+    color: _colors.colors.greyFont
+  },
+  employmentContent: {
+    fontSize: 18,
+    color: _colors.colors.greyFont,
+    marginTop: 10,
+    lineHeight: 1.5
+  }
+};
+
+/***/ }),
+
 /***/ "./client/ProjectSection.js":
 /*!**********************************!*\
   !*** ./client/ProjectSection.js ***!
@@ -267,6 +361,8 @@ var _reactModal2 = _interopRequireDefault(_reactModal);
 var _Divider = __webpack_require__(/*! ./Divider */ "./client/Divider.js");
 
 var _Divider2 = _interopRequireDefault(_Divider);
+
+var _ai = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -364,9 +460,23 @@ var ProjectModal = function ProjectModal(_ref2) {
       'div',
       { style: styles.modalProjectContent },
       _react2.default.createElement(
-        'strong',
-        null,
-        project.title
+        'div',
+        { style: styles.modalProjectTitleLine },
+        _react2.default.createElement(
+          'strong',
+          null,
+          project.title
+        ),
+        _react2.default.createElement(
+          'a',
+          {
+            className: 'githubLink',
+            href: project.github,
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          },
+          _react2.default.createElement(_ai.AiFillGithub, { size: 25 })
+        )
       ),
       _react2.default.createElement(_Divider2.default, null),
       project.description.map(function (p, i) {
@@ -414,11 +524,16 @@ var styles = {
     objectFit: 'cover'
   },
   modalProjectContent: {
-    padding: 20,
     fontSize: 18,
     color: _colors.colors.greyFont,
     marginTop: 10,
     lineHeight: 1.5
+  },
+  modalProjectTitleLine: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   }
 };
 
@@ -591,6 +706,26 @@ var colors = exports.colors = {
 
 /***/ }),
 
+/***/ "./client/employment.js":
+/*!******************************!*\
+  !*** ./client/employment.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var employmentList = exports.employmentList = [{
+  company: 'Cedrus Digital',
+  description: ['Worked extensively on enterprise web application for consulting firm’s client, an international auto rental company, and building out pages for account management', 'Created reusable and well-tested components using React, partnering with design team to develop efficient and responsive solutions for good user experience', 'Leveraged cutting edge technologies, like GraphQL, React Hooks and React Native']
+}];
+
+/***/ }),
+
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -636,12 +771,14 @@ var projects = exports.projects = [{
   title: 'SoundSpace',
   description: ['SoundSpace is a platform for sharing and discovering new music together. It was created in collaboration with three other developers at Fullstack Academy. As a team, we wanted to merge the best parts of radio and streaming services like Spotify. On SoundSpace, anyone can be the DJ, create their own listening space, and share their music tastes with the world in real-time.', 'SoundSpace is a web app created with React, a Node & Express server, and a PostgreSQL database. On it, users can sign in using their Spotify Premium accounts, which was made possible using OAuth. The ability to stream music in SoundSpace is enabled by Spotify Web Playback SDK, and our server takes advantage of the Spotify recommendation API to queue up songs in channels that listeners can vote on.', 'The inclusion of WebSocket-based features is one of my personal favorite aspects of SoundSpace. WebSockets allow SoundSpace users to have a synced-up listening experience, no matter where they are in the real world. Each channel also has its own chat room! With all of these features, SoundSpace makes it easy to find new music you\'ll love, all while making it a fun and social experience!'],
   short: 'Full stack web app for discovering and sharing music in a social listening space',
-  image: 'images/SoundSpace_Logo.png'
+  image: 'images/SoundSpace_Logo.png',
+  github: 'https://github.com/sound-space/SoundSpace'
 }, {
   title: 'TurfWar.io',
   description: ['TurfWar.io is a GPS-based, global game of territory control. It was developed as a hackathon project during my time studying at Fullstack Academy. It is currently deployed and available via Expo, and the server is launched on Heroku. The game was inspired by territory-based games like Splatoon and Planetside, and its incorporation of GPS as a game mechanic was inspired by Pokemon Go.', 'I developed the project over the course of 5 days, while I was studying at Fullstack Academy. Its diverse tech stack, architecture, and fluid UI made it a project I greatly enjoyed working on, and will always be proud of.', 'The technologies used to create the TurfWar.io app include React Native, Socket.io, Geolocation API, and various other npm modules. The TurfWar.io server uses Node.js, Socket.io, PostgreSQL, cron scheduling, and a React app for delivering meta information about the game and its current state.'],
   short: 'GPS-based global game of territory control',
-  image: 'images/TurfWar.png'
+  image: 'images/TurfWar.png',
+  github: 'https://github.com/erichfeinstein/TurfWar.io'
 }, {
   title: 'Fight or Fright',
   description: ['Fight or Fright is a 4-player online dungeon crawler battle royale game, featuring a comical cast of characters who find themselves in a hanted house and must battle to be the last survivor.  Each round features a randomly generated map of rooms to explore and enemies to fight in order to level up your stats.  Along the way, you\'ll also find magical powers and weapons to help in your battle against your opponents.', 'As Lead Programmer for this game project, I led and coordinated a team of 12 programmers and worked closely with students from the Cleveland Institute of Art and faculty to bring our game idea to life using the Unity Engine and C#.  As part of my role as Lead Programmer, I led team meetings in which we divided ourselves into subteams to develop the specific aspects of the game, such as environments, player controls, and multiplayer networking.', 'Working on Fight or Fright strengthened my organization and leadership skills, and the final product is one I\'m very proud of. My friends still have a blast playing it today!'],
@@ -653,8 +790,7 @@ var projects = exports.projects = [{
   description: ['MunchBox is an Android application published on the Google Play Store.  Using the Google Cloud Platform, MunchBox is able to detect restaurants in your area as well as analyze images to generate a list of tags to describe your meal, which makes it easy to search your MunchBox for your favorite food when you\'re hungry!', 'As my capstone project at Case Western, MunchBox came about from a developing interest in creating mobile apps.  While working on this project, I acquired the skills for developing on the Android platform, like understanding the Android Activity Lifecycle, Android SDK, XML, and use of APIs.  Additionally, working on MunchBox strengthened my understanding of UI/UX design for consumer-facing apps.'],
   short: 'Android food journal application which uses image analysis and location services ',
   image: 'images/MunchBox_Title.png',
-  github: 'https://github.com/erichfeinstein/MunchBox',
-  googleplay: 'https://play.google.com/store/apps/details?id=seniorproj.munchbox&hl=en_US'
+  github: 'https://github.com/erichfeinstein/MunchBox'
 }, {
   title: 'Twitter Sentiment Analysis',
   description: ['The Twitter Sentiment Analysis tool is a simple website that analyzes the sentimnet of a selection of Tweets in real-time and charts the results. The inspiration for the website came from an interest in real-time social media trends and data visualization.', 'The tool was built with Node, Express and a sentiment analysis NPM library on the backend, and React and D3 on the frontend. D3 is a powerful tool that I\'ve been learning, and the Twitter Sentiment Analysis tool makes great use of it!'],

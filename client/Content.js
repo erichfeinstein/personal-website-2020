@@ -4,6 +4,7 @@ import React from 'react';
 import Summary from './Summary';
 import ProjectSection from './ProjectSection';
 import Divider from './Divider';
+import EmploymentSection from './EmploymentSection';
 
 const Content = () => {
   return (
@@ -11,6 +12,8 @@ const Content = () => {
       <Summary />
       <Divider />
       <ProjectSection />
+      <Divider />
+      <EmploymentSection />
       <Divider />
     </div>
   );

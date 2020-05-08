@@ -4,6 +4,7 @@ import { colors } from './colors';
 const { projects } = require('./projects');
 import Modal from 'react-modal';
 import Divider from './Divider';
+import { AiFillGithub } from 'react-icons/ai';
 
 const ProjectSummary = () => {
   const [projectDetails, setProjectDetails] = useState(null);
@@ -61,7 +62,17 @@ const ProjectModal = ({ project }) => {
     <div style={styles.project}>
       <img style={styles.modalProjectImage} src={project.image} />
       <div style={styles.modalProjectContent}>
-        <strong>{project.title}</strong>
+        <div style={styles.modalProjectTitleLine}>
+          <strong>{project.title}</strong>
+          <a
+            className="githubLink"
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillGithub size={25} />
+          </a>
+        </div>
         <Divider />
         {project.description.map((p, i) => {
           return <p key={i}>{p}</p>;
@@ -105,11 +116,16 @@ const styles = {
     objectFit: 'cover',
   },
   modalProjectContent: {
-    padding: 20,
     fontSize: 18,
     color: colors.greyFont,
     marginTop: 10,
     lineHeight: 1.5,
+  },
+  modalProjectTitleLine: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 };
 

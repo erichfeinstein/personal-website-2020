@@ -9,6 +9,7 @@ export const projects = [
     short:
       'Full stack web app for discovering and sharing music in a social listening space',
     image: 'images/SoundSpace_Logo.png',
+    github: 'https://github.com/sound-space/SoundSpace',
   },
   {
     title: 'TurfWar.io',
@@ -21,6 +22,7 @@ export const projects = [
     ],
     short: 'GPS-based global game of territory control',
     image: 'images/TurfWar.png',
+    github: 'https://github.com/erichfeinstein/TurfWar.io',
   },
   {
     title: 'Fight or Fright',
@@ -44,8 +46,6 @@ export const projects = [
       'Android food journal application which uses image analysis and location services ',
     image: 'images/MunchBox_Title.png',
     github: 'https://github.com/erichfeinstein/MunchBox',
-    googleplay:
-      'https://play.google.com/store/apps/details?id=seniorproj.munchbox&hl=en_US',
   },
   {
     title: 'Twitter Sentiment Analysis',

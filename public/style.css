@@ -43,6 +43,10 @@
   filter: drop-shadow(10px 10px 10px grey);
 }
 
+.githubLink {
+  color: #666677;
+}
+
 .ReactModal__Content {
   margin: auto;
   width: 700px;
@@ -63,7 +67,7 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  background-color: white;
 }
 
 @media only screen and (max-width: 978px) {
@@ -88,5 +92,11 @@
   }
   #content {
     width: 100%;
+  }
+  .ReactModal__Content {
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    height: 80%;
   }
 }
