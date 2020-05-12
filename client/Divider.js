@@ -4,8 +4,7 @@ const Divider = () => {
   return (
     <div
       style={{
-        marginTop: 20,
-        marginBottom: 50,
+        marginBottom: 30,
         width: '100%',
         height: 2,
         backgroundColor: '#DDDDDD',

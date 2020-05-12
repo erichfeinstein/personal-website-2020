@@ -117,6 +117,7 @@ const styles = {
     lineHeight: 1.5,
   },
   modalProjectTitleLine: {
+    margin: 'auto',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

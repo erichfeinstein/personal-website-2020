@@ -30,5 +30,6 @@ const styles = {
     lineHeight: 1.5,
     wordSpacing: '4px',
     fontSize: '14pt',
+    marginBottom: 25,
   },
 };

@@ -301,8 +301,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Divider = function Divider() {
   return _react2.default.createElement('div', {
     style: {
-      marginTop: 20,
-      marginBottom: 50,
+      marginBottom: 30,
       width: '100%',
       height: 2,
       backgroundColor: '#DDDDDD',
@@ -591,6 +590,7 @@ var styles = {
     lineHeight: 1.5
   },
   modalProjectTitleLine: {
+    margin: 'auto',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -765,7 +765,8 @@ var styles = {
     color: '#666670',
     lineHeight: 1.5,
     wordSpacing: '4px',
-    fontSize: '14pt'
+    fontSize: '14pt',
+    marginBottom: 25
   }
 };
 
@@ -805,7 +806,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var employmentList = exports.employmentList = [{
   company: 'Cedrus Digital',
-  description: ['Worked extensively on enterprise web application for consulting firm’s client, an international auto rental company, and building out pages for account management', 'Created reusable and well-tested components using React, partnering with design team to develop efficient and responsive solutions for good user experience', 'Leveraged cutting edge technologies, like GraphQL, React Hooks and React Native']
+  description: ['Worked extensively on enterprise web application for consulting firm\'s client, an international auto rental company, and building out pages for account management', 'Created reusable and well-tested components using React, partnering with design team to develop efficient and responsive solutions for good user experience', 'Leveraged cutting edge technologies, like GraphQL, React Hooks and React Native']
 }];
 
 /***/ }),
