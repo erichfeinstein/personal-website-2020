@@ -2,6 +2,7 @@ import React from 'react';
 
 //Components
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
+import { FiDownload } from 'react-icons/fi';
 
 const Sidebar = () => {
   return (
@@ -10,6 +11,16 @@ const Sidebar = () => {
         <img id="headshot" src="images/headshot.png" />
         <p id="title">Eric Feinstein</p>
         <p style={styles.font}>Full-Stack Software Engineer</p>
+        <a
+          href="documents/EricFeinsteinResume.pdf"
+          download="EricFeinsteinResume"
+          onClick={(evt) => downloadResume(evt)}
+          style={styles.inlineIcon}
+        >
+          <FiDownload size="25" />
+          <p style={styles.font}>Resume</p>
+        </a>
+        <br />
         <div style={styles.inlineIcon}>
           <AiOutlineMail size="25" />
           <p style={styles.font}>erichfeinstein@gmail.com</p>
@@ -21,6 +32,11 @@ const Sidebar = () => {
       </div>
     </div>
   );
+};
+
+const downloadResume = (evt) => {
+  window.open('documents/EricFeinsteinResume.pdf');
+  evt.preventDefault();
 };
 
 const styles = {

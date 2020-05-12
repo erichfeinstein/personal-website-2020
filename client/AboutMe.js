@@ -8,8 +8,7 @@ const AboutMe = () => {
       <div>
         <p style={styles.paragraph}>
           I'm a software engineer in New York City exploring new opportunities
-          where I can leverage my skills and experience across the software
-          stack.
+          where I can use my skills and experience across the software stack.
         </p>
         <p style={styles.paragraph}>
           While an undergrad at Case Western, I was an active member of Case

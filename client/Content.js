@@ -6,7 +6,6 @@ import ProjectSection from './ProjectSection';
 import Divider from './Divider';
 import EmploymentSection from './EmploymentSection';
 import AboutMe from './AboutMe';
-import Contact from './Contact';
 
 const Content = () => {
   return (
@@ -18,8 +17,6 @@ const Content = () => {
       <EmploymentSection />
       <Divider />
       <AboutMe />
-      <Divider />
-      <Contact />
     </div>
   );
 };
