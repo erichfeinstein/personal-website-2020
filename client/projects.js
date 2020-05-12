@@ -14,10 +14,7 @@ export const projects = [
   {
     title: 'TurfWar.io',
     description: [
-      `TurfWar.io is a GPS-based, global game of territory control. It was developed as a hackathon project during my time studying at Fullstack Academy. It is currently deployed and available via Expo, and the server is launched on Heroku. The game was inspired by territory-based games like Splatoon and Planetside, and its incorporation of GPS as a game mechanic was inspired by Pokemon Go.`,
-
-      `I developed the project over the course of 5 days, while I was studying at Fullstack Academy. Its diverse tech stack, architecture, and fluid UI made it a project I greatly enjoyed working on, and will always be proud of.`,
-
+      `TurfWar.io is a GPS-based, global game of territory control. It was developed as a hackathon project during my time studying at Fullstack Academy. It is currently deployed and available via Expo, and the server is launched on Heroku. The game was inspired by territory-based games like Splatoon and Planetside, and its incorporation of GPS as a game mechanic was inspired by Pokemon Go. Its diverse tech stack, architecture, and fluid UI made it a project I greatly enjoyed working on, and will always be proud of.`,
       `The technologies used to create the TurfWar.io app include React Native, Socket.io, Geolocation API, and various other npm modules. The TurfWar.io server uses Node.js, Socket.io, PostgreSQL, cron scheduling, and a React app for delivering meta information about the game and its current state.`,
     ],
     short: 'GPS-based global game of territory control',
@@ -40,7 +37,7 @@ export const projects = [
     title: 'MunchBox',
     description: [
       `MunchBox is an Android application published on the Google Play Store.  Using the Google Cloud Platform, MunchBox is able to detect restaurants in your area as well as analyze images to generate a list of tags to describe your meal, which makes it easy to search your MunchBox for your favorite food when you're hungry!`,
-      `As my capstone project at Case Western, MunchBox came about from a developing interest in creating mobile apps.  While working on this project, I acquired the skills for developing on the Android platform, like understanding the Android Activity Lifecycle, Android SDK, XML, and use of APIs.  Additionally, working on MunchBox strengthened my understanding of UI/UX design for consumer-facing apps.`,
+      `As my interest in creating mobile apps grew, I decided to create MunchBox as my capstone project at Case Western. While working on this project, I acquired the skills for developing on the Android platform, like understanding the Android Activity Lifecycle, Android SDK, XML, and use of the Google Cloud Platform.  Additionally, working on MunchBox strengthened my understanding of UI/UX design for consumer-facing apps.`,
     ],
     short:
       'Android food journal application which uses image analysis and location services ',
