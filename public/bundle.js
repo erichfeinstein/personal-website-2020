@@ -86,6 +86,72 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/AboutMe.js":
+/*!***************************!*\
+  !*** ./client/AboutMe.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _colors = __webpack_require__(/*! ./colors */ "./client/colors.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AboutMe = function AboutMe() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      { className: 'sectionHeader' },
+      'About Me'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'p',
+        { style: styles.paragraph },
+        'I\'m a software engineer in New York City exploring new opportunities where I can leverage my skills and experience across the software stack.'
+      ),
+      _react2.default.createElement(
+        'p',
+        { style: styles.paragraph },
+        'While an undergrad at Case Western, I was an active member of Case Men\'s Glee Club, in which I authored a mentorship program for new members, helped more than triple the group\'s size, and continued its century-old traditions.'
+      ),
+      _react2.default.createElement(
+        'p',
+        { style: styles.paragraph },
+        'In my free time, I enjoy playing guitar and recording music. Some of my work is published on platforms like Spotify and Apple Music. I also enjoy homebrewing mead to share with family and friends!'
+      )
+    )
+  );
+};
+
+var styles = {
+  paragraph: {
+    fontSize: 18,
+    color: _colors.colors.greyFont,
+    marginTop: 10,
+    lineHeight: 2
+  }
+};
+
+exports.default = AboutMe;
+
+/***/ }),
+
 /***/ "./client/App.js":
 /*!***********************!*\
   !*** ./client/App.js ***!
@@ -153,6 +219,42 @@ exports.default = App;
 
 /***/ }),
 
+/***/ "./client/Contact.js":
+/*!***************************!*\
+  !*** ./client/Contact.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Contact = function Contact() {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "div",
+      { className: "sectionHeader" },
+      "Get In Touch"
+    )
+  );
+};
+
+exports.default = Contact;
+
+/***/ }),
+
 /***/ "./client/Content.js":
 /*!***************************!*\
   !*** ./client/Content.js ***!
@@ -187,6 +289,14 @@ var _EmploymentSection = __webpack_require__(/*! ./EmploymentSection */ "./clien
 
 var _EmploymentSection2 = _interopRequireDefault(_EmploymentSection);
 
+var _AboutMe = __webpack_require__(/*! ./AboutMe */ "./client/AboutMe.js");
+
+var _AboutMe2 = _interopRequireDefault(_AboutMe);
+
+var _Contact = __webpack_require__(/*! ./Contact */ "./client/Contact.js");
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //Components
@@ -199,7 +309,10 @@ var Content = function Content() {
     _react2.default.createElement(_ProjectSection2.default, null),
     _react2.default.createElement(_Divider2.default, null),
     _react2.default.createElement(_EmploymentSection2.default, null),
-    _react2.default.createElement(_Divider2.default, null)
+    _react2.default.createElement(_Divider2.default, null),
+    _react2.default.createElement(_AboutMe2.default, null),
+    _react2.default.createElement(_Divider2.default, null),
+    _react2.default.createElement(_Contact2.default, null)
   );
 };
 
@@ -230,7 +343,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Divider = function Divider() {
   return _react2.default.createElement('div', {
     style: {
-      marginTop: 25,
+      marginTop: 20,
       marginBottom: 50,
       width: '100%',
       height: 2,
@@ -275,7 +388,7 @@ var EmploymentSection = function EmploymentSection() {
     null,
     _react2.default.createElement(
       'div',
-      { style: styles.sectionHeader },
+      { className: 'sectionHeader' },
       'Employment'
     ),
     employmentList.map(function (employment) {
@@ -300,13 +413,13 @@ var Employment = function Employment(_ref) {
       )
     ),
     _react2.default.createElement(
-      'div',
+      'ul',
       { style: styles.employmentContent },
-      employment.description.map(function (p, i) {
+      employment.description.map(function (d, i) {
         return _react2.default.createElement(
-          'p',
+          'li',
           { key: i },
-          p
+          d
         );
       })
     )
@@ -317,16 +430,11 @@ exports.default = EmploymentSection;
 
 
 var styles = {
-  sectionHeader: {
-    fontSize: 24,
-    marginBottom: 50,
-    color: _colors.colors.greyFont
-  },
   employmentContent: {
     fontSize: 18,
     color: _colors.colors.greyFont,
     marginTop: 10,
-    lineHeight: 1.5
+    lineHeight: 2
   }
 };
 
@@ -385,7 +493,7 @@ var ProjectSummary = function ProjectSummary() {
     null,
     _react2.default.createElement(
       'div',
-      { style: styles.sectionHeader },
+      { className: 'sectionHeader' },
       'Projects'
     ),
     _react2.default.createElement(
@@ -495,12 +603,7 @@ var styles = {
     display: 'grid',
     gridTemplateColumns: 'auto auto',
     gridColumnGap: '20px',
-    gridAutoRows: 350
-  },
-  sectionHeader: {
-    fontSize: 24,
-    marginBottom: 50,
-    color: _colors.colors.greyFont
+    gridAutoRows: 300
   },
   project: {
     marginBottom: 20

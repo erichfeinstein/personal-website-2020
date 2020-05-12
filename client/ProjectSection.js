@@ -12,7 +12,7 @@ const ProjectSummary = () => {
 
   return (
     <div>
-      <div style={styles.sectionHeader}>Projects</div>
+      <div className="sectionHeader">Projects</div>
       <Modal
         style={{
           overlay: {
@@ -87,12 +87,7 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: 'auto auto',
     gridColumnGap: '20px',
-    gridAutoRows: 350,
-  },
-  sectionHeader: {
-    fontSize: 24,
-    marginBottom: 50,
-    color: colors.greyFont,
+    gridAutoRows: 300,
   },
   project: {
     marginBottom: 20,
