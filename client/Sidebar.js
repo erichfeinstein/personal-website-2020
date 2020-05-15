@@ -3,6 +3,7 @@ import React from 'react';
 //Components
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { FiDownload } from 'react-icons/fi';
+import SidebarThree from './SidebarThree';
 
 const Sidebar = () => {
   return (
@@ -30,6 +31,7 @@ const Sidebar = () => {
           <p style={styles.font}>914-255-5074</p>
         </div>
       </div>
+      <SidebarThree />
     </div>
   );
 };
